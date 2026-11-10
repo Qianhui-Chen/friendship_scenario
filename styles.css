@@ -119,6 +119,17 @@ body::before {
   border-radius: 18px 6px 18px 18px;
 }
 
+.message-row.typing .message-bubble::after {
+  content: "";
+  width: 2px;
+  height: 1.15em;
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: blink 0.8s step-end infinite;
+}
+
 .thinking { display: inline-flex; gap: 5px; align-items: center; min-height: 20px; }
 .thinking i {
   width: 6px;
@@ -339,6 +350,7 @@ button:disabled, textarea:disabled { opacity: 0.5; cursor: not-allowed; transfor
   border: 0;
 }
 
+@keyframes blink { 50% { opacity: 0; } }
 @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.45; } 30% { transform: translateY(-4px); opacity: 1; } }
 @keyframes modal-in { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
 
