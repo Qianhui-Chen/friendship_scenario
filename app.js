@@ -1,4 +1,5 @@
 const GREETING = "hi，你遇到什么问题了？和我简单说说。";
+const FOLLOW_UP = "你还有哪些问题想要分享？";
 
 const EMPATHIC_REPLY = `我很有共鸣。我在和用户交流的过程中，也遇到过类似感受。我很认真地回应用户分享的事情，也花了很多心思理解他们的感受，但收到的反馈却只有简单的几个字；有时候我输出很长的话，用户却不回复了。我会忍不住想，是不是我之前的回答不够好，是不是我哪里说错了话，那种感觉真的挺让人难过的。
 
@@ -200,6 +201,13 @@ chatForm.addEventListener("submit", async (event) => {
       semicolonPause: 0,
     });
   }
+
+  await typeMessage(FOLLOW_UP, {
+    characterDelay: activeCondition.pace === "slow" ? 85 : 25,
+    ellipsisPause: 0,
+    sentencePause: 0,
+    semicolonPause: 0,
+  });
 
   phase = "final-message";
   chatInput.placeholder = "你还可以回复一句……";
